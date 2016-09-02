@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<!-- saved from url=(0056)http://www.5iweb.com.cn/resource/3D_Animation/index.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+<title>HTML5 3D效果 | CSS3 动画</title>
+<style>
+html, body {
+	height: 100%;
+}
+
+body {
+	background-color: #000000;
+	margin: 0;
+	font-family: Helvetica, sans-serif;;
+	overflow: hidden;
+}
+
+a {
+	color: #ffffff;
+}
+
+#info {
+	position: absolute;
+	width: 100%;
+	color: #ffffff;
+	padding: 5px;
+	font-family: Monospace;
+	font-size: 13px;
+	font-weight: bold;
+	text-align: center;
+	z-index: 1;
+}
+
+#menu {
+	position: absolute;
+	bottom: 20px;
+	width: 100%;
+	text-align: center;
+	font-family: verdana,Tahoma,Arial,Hei,"Microsoft Yahei",SimHei;
+}
+
+.element {
+	width: 120px;
+	height: 160px;
+	box-shadow: 0px 0px 12px rgba(0,255,255,0.5);
+	border: 1px solid rgba(127,255,255,0.25);
+	text-align: center;
+	cursor: default;
+}
+
+.element:hover {
+	box-shadow: 0px 0px 12px rgba(0,255,255,0.75);
+	border: 1px solid rgba(127,255,255,0.75);
+}
+
+	.element .number {
+		position: absolute;
+		top: 20px;
+		right: 20px;
+		font-size: 12px;
+		color: rgba(127,255,255,0.75);
+	}
+
+	.element .symbol {
+		position: absolute;
+		top: 40px;
+		left: 0px;
+		right: 0px;
+		font-size: 60px;
+		font-weight: bold;
+		color: rgba(255,255,255,0.75);
+		text-shadow: 0 0 10px rgba(0,255,255,0.95);
+	}
+
+	.element .details {
+		position: absolute;
+		bottom: 15px;
+		left: 0px;
+		right: 0px;
+		font-size: 12px;
+		color: rgba(127,255,255,0.75);
+	}
+
+button {
+	color: rgba(127,255,255,0.75);
+	background: transparent;
+	outline: 1px solid rgba(127,255,255,0.75);
+	border: 0px;
+	padding: 5px 10px;
+	cursor: pointer;
+}
+button:hover {
+	background-color: rgba(0,255,255,0.5);
+}
+button:active {
+	color: #000000;
+	background-color: rgba(0,255,255,0.75);
+}
+</style>
+</head>
+<body>
+<script src="./HTML5 3D效果   CSS3 动画_files/three.min.js"></script>
+<script src="./HTML5 3D效果   CSS3 动画_files/tween.min.js"></script>
+<script src="./HTML5 3D效果   CSS3 动画_files/TrackballControls.js"></script>
+<script src="./HTML5 3D效果   CSS3 动画_files/CSS3DRenderer.js"></script>
+
+<div id="container"><div style="overflow: hidden; -webkit-transform-style: preserve-3d; width: 1814px; height: 928px; position: absolute; -webkit-perspective: 1274.829522626945px;"><div style="-webkit-transform-style: preserve-3d; width: 1814px; height: 928px; -webkit-transform: translate3d(0px, 0px, 1274.829522626945px) matrix3d(0.9999999403953552, 0.00016965260147117078, -0.0003308034793008119, 0, 0.0001775693817762658, -0.9997100234031677, 0.02408067137002945, 0, 0.00032662219018675387, 0.024080729112029076, 0.9997100234031677, 0, 0, -0.0000018788691704685334, -3000, 1) translate3d(907px, 464px, 0px);"><div class="element" style="position: absolute; -webkit-transform: translate3d(-50%, -50%, 0px) matrix3d(-1, 0, 0, 0, 0, -1, 0, 0, 0, 0, -1, 0, 0, 0, -800, 1); background-color: rgba(0, 127, 127, 0.654902);"><div class="number">1</div><div class="symbol">H</div><div class="details">Hydrogen<br>1.00794</div></div><div class="element" style="position: absolute; -webkit-transform: translate3d(-50%, -50%, 0px) matrix3d(-0.9854349493980408, 0, -0.17005284130573273, 0, 0.011821815744042397, -0.9975806474685669, -0.06850595027208328, 0, 0.1696414202451706, 0.06951849162578583, -0.9830508232116699, 0, 135.713134765625, 55.61479187011719, -786.440673828125, 1); background-color: rgba(0, 127, 127, 0.305882);"><div class="number">2</div><div class="symbol">He</div><div class="details">Helium<br>4.002602</div></div><div class="element" style="position: absolute; -webkit-transform: translate3d(-50%, -50%, 0px) matrix3d(-0.9924116134643555, 0, -0.12296008318662643, 0, -0.028125183656811714, -0.9734889268875122, 0.22699853777885437, 0, 0.11970027536153793, -0.22873425483703613, -0.9661017060279846, 0, 95.76022338867188, -182.98739624023438, -772.88134765625, 1); background-color: rgba(0, 127, 127, 0.305882);"><div class="number">3</div><div class="symbol">Li</div><div class="details">Lithium<br>#6.941</div></div><div class="element" style="position: absolute; -webkit-transform: translate3d(-50%, -50%, 0px) matrix3d(-0.9801115393638611, 0, 0.19844749569892883, 0, 0.049483370035886765, -0.9684128165245056, 0.2443932145833969, 0, -0.1921790987253189, -0.24935245513916016, -0.9491525292396545, 0, -153.74327087402344, -199.48196411132813, -759.322021484375, 1); background-color: rgba(0, 127, 127, 0.266667);"><div class="number">4</div><div class="symbol">Be</div><div class="details">Beryllium<br>9.012182</div></div><div class="element" style="position: absolute; -webkit-transform: translate3d(-50%, -50%, 0px) matrix3d(-0.9323562383651733, 0, 0.3615409731864929, 0, -0.006545852404087782, -0.9998360872268677, -0.0168807040899992, 0, -0.3614817261695862, 0.01810542307794094, -0.9322034120559692, 0, -289.18536376953125, 14.484338760375977, -745.7626953125, 1); background-color: rgba(0, 127, 127, 0.619608);"><div class="number">5</div><div class="symbol">B</div><div class="details">Boron<br>#10.811</div></div><div class="element" style="position: absolute; -webkit-transform: translate3d(-50%, -50%, 0px) matrix3d(-0.9648223519325256, 0, 0.26290270686149597, 0, -0.0831834003329277, -0.9486246109008789, -0.3052734136581421, 0, -0.2493959665298462, 0.31640374660491943, -0.9152542352676392, 0, -199.5167694091797, 253.1230010986328, -732.203369140625, 1); background-color: rgba(0, 127, 127, 0.458824);"><div class="number">6</div><div class="symbol">C</div><div class="details">Carbon<br>#12.0107</div></div><div class="element" style="position: absolute; -webkit-transform: translate3d(-50%, -50%, 0px) matrix3d(-0.9986311197280884, 0, -0.05230564624071121, 0, 0.022849498316645622, -0.8995364308357239, -0.43624773621559143, 0, 0.0470508337020874, 0.43684571981430054, -0.8983050584793091, 0, 37.64066696166992, 349.4765930175781, -718.64404296875, 1); background-color: rgba(0, 127, 127, 0.262745);"><div class="number">7</div><div class="symbol">N</div><div class="details">Nitrogen<br>#14.0067</div></div><div class="element" style="position: absolute; -webkit-transform: translate3d(-50%, -50%, 0px) matrix3d(-0.9306980967521667, 0, -0.3657882809638977, 0, 0.11752103269100189, -0.9469836950302124, -0.2990161180496216, 0, 0.3463955521583557, 0.3212815523147583, -0.8813559412956238, 0, 277.116455078125, 257.0252380371094, -705.084716796875, 1); background-color: rgba(0, 127, 127, 0.454902);"><div class="number">8</div><div class="symbol">O</div><div class="details">Oxygen<br>#15.9994</div></div><div class="element" style="position: absolute; -webkit-transform: translate3d(-50%, -50%, 0px) matrix3d(-0.8650817275047302, 0, -0.5016309022903442, 0, 0.019812002778053284, -0.9992197751998901, -0.03416655957698822, 0, 0.501239538192749, 0.039495181292295456, -0.8644067645072937, 0, 400.9916076660156, 31.59614372253418, -691.5254516601563, 1); background-color: rgba(0, 127, 127, 0.392157);"><div class="number">9</div><div class="symbol">F</div><div class="details">Fluorine<br>18.9984032</div></div><div class="element" style="position: absolute; -webkit-transform: translate3d(-50%, -50%, 0px) matrix3d(-0.8824233412742615, 0, -0.47045621275901794, 0, -0.13112078607082367, -0.9603753685951233, 0.24594010412693024, 0, 0.45181453227996826, -0.27870988845825195, -0.8474576473236084, 0, 361.4516296386719, -222.96791076660156, -677.9661254882813, 1); background-color: rgba(0, 127, 127, 0.305882);"><div class="number">10</div><div class="symbol">Ne</div><div class="details">Neon<br>#20.1797</div></div><div class="element" style="position: absolute; -webkit-transform: translate3d(-50%, -50%, 0px) matrix3d(-0.964855968952179, 0, -0.2627792954444885, 0, -0.13375799357891083, -0.8607590198516846, 0.4911239445209503, 0, 0.22618964314460754, -0.5090126991271973, -0.8305084705352783, 0, 180.95172119140625, -407.21014404296875, -664.4067993164063, 1); background-color: rgba(0, 127, 127, 0.611765);"><div class="number">11</div><div class="symbol">Na</div><div class="details">Sodium<br>22.98976...</div></div><div class="element" style="position: absolute; -webkit-transform: translate3d(-50%, -50%, 0px) matrix3d(-0.993961751461029, 0, 0.10972724854946136, 0, 0.06303875893354416, -0.8185016512870789, 0.5710351467132568, 0, -0.08981193602085114, -0.5745041966438293, -0.8135592937469482, 0, -71.84954833984375, -459.60333251953125, -650.8474731445313, 1); background-color: rgba(0, 127, 127, 0.462745);"><div class="number">12</div><div class="symbol">Mg</div><div class="details">Magnesium<br>#24.305</div></div><div class="element" style="position: absolute; -webkit-transform: translate3d(-50%, -50%, 0px) matrix3d(-0.8972952365875244, 0, 0.441430926322937, 0, 0.2031676173210144, -0.8877905011177063, 0.4129782021045685, 0, -0.39189815521240234, -0.46024784445762634, -0.7966101765632629, 0, -313.5185241699219, -368.1982727050781, -637.2881469726563, 1); background-color: rgba(0, 127, 127, 0.596078);"><div class="number">13</div><div class="symbol">Al</div><div class="details">Aluminium<br>26.9815386</div></div><div class="element" style="position: absolute; -webkit-transform: translate3d(-50%, -50%, 0px) matrix3d(-0.7967429161071777, 0, 0.6043184399604797, 0, 0.12446553260087967, -0.9785603880882263, 0.16409730911254883, 0, -0.5913620591163635, -0.20596016943454742, -0.7796609997749329, 0, -473.08966064453125, -164.7681427001953, -623.7288208007813, 1); background-color: rgba(0, 127, 127, 0.572549);"><div class="number">14</div><div class="symbol">Si</div><div class="details">Silicon<br>#28.0855</div></div><div class="element" style="position: absolute; -webkit-transform: translate3d(-50%, -50%, 0px) matrix3d(-0.767737090587616, 0, 0.6407650113105774, 0, -0.07319359481334686, -0.9934545159339905, -0.08769741654396057, 0, -0.6365708708763123, 0.11422844976186752, -0.7627118825912476, 0, -509.2566833496094, 91.38276672363281, -610.1694946289063, 1); background-color: rgba(0, 127, 127, 0.266667);"><div class="number">15</div><div class="symbol">P</div><div class="details">Phosphorus<br>30.973762</div></div><div class="element" style="position: absolute; -webkit-transform: translate3d(-50%, -50%, 0px) matrix3d(-0.8201417922973633, 0, 0.5721603035926819, 0, -0.23808765411376953, -0.909309446811676, -0.3412778675556183, 0, -0.5202707648277283, 0.4161205589771271, -0.7457627058029175, 0, -416.21661376953125, 332.8964538574219, -596.6101684570313, 1); background-color: rgba(0, 127, 127, 0.439216);"><div class="number">16</div><div class="symbol">S</div><div class="details">Sulfur<br>#32.065</div></div><div class="element" style="position: absolute; -webkit-transform: translate3d(-50%, -50%, 0px) matrix3d(-0.9356730580329895, 0, 0.35286810994148254, 0, -0.22129224240779877, -0.7789190411567688, -0.5867835283279419, 0, -0.27485570311546326, 0.6271244883537292, -0.7288135886192322, 0, -219.88455200195313, 501.6996154785156, -583.0508422851563, 1); background-color: rgba(0, 127, 127, 0.32549);"><div class="number">17</div><div class="symbol">Cl</div><div class="details">Chlorine<br>#35.453</div></div><div class="element" style="position: absolute; -webkit-transform: translate3d(-50%, -50%, 0px) matrix3d(-0.99839848279953, 0, -0.05657234415411949, 0, 0.039666131138801575, -0.7130062580108643, -0.7000347375869751, 0, 0.04033643752336502, 0.7011576294898987, -0.7118644118309021, 0, 32.26914978027344, 560.9260864257813, -569.4915161132813, 1); background-color: rgba(0, 127, 127, 0.603922);"><div class="number">18</div><div class="symbol">Ar</div><div class="details">Argon<br>#39.948</div></div><div class="element" style="position: absolute; -webkit-transform: translate3d(-50%, -50%, 0px) matrix3d(-0.8904300332069397, 0, -0.45512011647224426, 0, 0.28456270694732666, -0.780426561832428, -0.5567391514778137, 0, 0.3551878035068512, 0.6252474784851074, -0.694915235042572, 0, 284.1502685546875, 500.1979675292969, -555.9321899414063, 1); background-color: rgba(0, 127, 127, 0.490196);"><div class="number">19</div><div class="symbol">K</div><div class="details">Potassium<br>#39.948</div></div><div class="element" style="position: absolute; -webkit-transform: translate3d(-50%, -50%, 0px) matrix3d(-0.7464133501052856, 0, -0.6654826402664185, 0, 0.2783864438533783, -0.9082984924316406, -0.3122415840625763, 0, 0.604456901550293, 0.4183226227760315, -0.6779661178588867, 0, 483.5655212402344, 334.6581115722656, -542.3728637695313, 1); background-color: rgba(0, 127, 127, 0.427451);"><div class="number">20</div><div class="symbol">Ca</div><div class="details">Calcium<br>#40.078</div></div><div class="element" style="position: absolute; -webkit-transform: translate3d(-50%, -50%, 0px) matrix3d(-0.6661590933799744, 0, -0.7458096742630005, 0, 0.09248825162649155, -0.992280900478363, -0.08261074125766754, 0, 0.7400527000427246, 0.12401053309440613, -0.6610169410705566, 0, 592.0421752929688, 99.20841979980469, -528.8135375976563, 1); background-color: rgba(0, 127, 127, 0.560784);"><div class="number">21</div><div class="symbol">Sc</div><div class="details">Scandium<br>44.955912</div></div><div class="element" style="position: absolute; -webkit-transform: translate3d(-50%, -50%, 0px) matrix3d(-0.6573631763458252, 0, -0.7535738945007324, 0, -0.15079320967197418, -0.9797746539115906, 0.13154105842113495, 0, 0.7383326292037964, -0.20010407269001007, -0.6440677642822266, 0, 590.6660766601563, -160.08326721191406, -515.2542114257813, 1); background-color: rgba(0, 127, 127, 0.54902);"><div class="number">22</div><div class="symbol">Ti</div><div class="details">Titanium<br>#47.867</div></div><div class="element" style="position: absolute; -webkit-transform: translate3d(-50%, -50%, 0px) matrix3d(-0.7213874459266663, 0, -0.6925317049026489, 0, -0.34228000044822693, -0.8693229556083679, 0.3565417528152466, 0, 0.6020337343215942, -0.4942444860935211, -0.6271186470985413, 0, 481.6269836425781, -395.3955993652344, -501.6949157714844, 1); background-color: rgba(0, 127, 127, 0.384314);"><div class="number">23</div><div class="symbol">V</div><div class="details">Vanadium<br>#50.9415</div></div><div class="element" style="position: absolute; -webkit-transform: translate3d(-50%, -50%, 0px) matrix3d(-0.8628663420677185, 0, -0.50543212890625, 0, -0.35737642645835876, -0.7071425318717957, 0.6101078391075134, 0, 0.35741257667541504, -0.70707106590271, -0.6101694703102112, 0, 285.9300537109375, -565.6567993164063, -488.1355895996094, 1); background-color: rgba(0, 127, 127, 0.282353);"><div class="number">24</div><div class="symbol">Cr</div><div class="details">Chromium<br>#51.9961</div></div><div class="element" style="position: absolute; -webkit-transform: translate3d(-50%, -50%, 0px) matrix3d(-0.9967668652534485, 0, -0.08034814149141312, 0, -0.06456927210092545, -0.595144510269165, 0.8010205030441284, 0, 0.047818757593631744, -0.8036186695098877, -0.5932203531265259, 0, 38.2550048828125, -642.8949584960938, -474.5762634277344, 1); background-color: rgba(0, 127, 127, 0.631373);"><div class="number">25</div><div class="symbol">Mn</div><div class="details">Manganese<br>54.938045</div></div><div class="element" style="position: absolute; -webkit-transform: translate3d(-50%, -50%, 0px) matrix3d(-0.9026565551757813, 0, 0.43036162853240967, 0, 0.3312453627586365, -0.6384168863296509, 0.6947664022445679, 0, -0.27475014328956604, -0.769690752029419, -0.5762711763381958, 0, -219.80010986328125, -615.7526245117188, -461.0169372558594, 1); background-color: rgba(0, 127, 127, 0.317647);"><div class="number">26</div><div class="symbol">Fe</div><div class="details">Iron<br>#55.845</div></div><div class="element" style="position: absolute; -webkit-transform: translate3d(-50%, -50%, 0px) matrix3d(-0.7076053023338318, 0, 0.7066079378128052, 0, 0.43282201886177063, -0.7904435396194458, 0.433432936668396, 0, -0.5585336685180664, -0.6125348806381226, -0.5593219995498657, 0, -446.8269348144531, -490.0279235839844, -447.4576416015625, 1); background-color: rgba(0, 127, 127, 0.27451);"><div class="number">27</div><div class="symbol">Co</div><div class="details">Cobalt<br>58.933195</div></div><div class="element" style="position: absolute; -webkit-transform: translate3d(-50%, -50%, 0px) matrix3d(-0.5809188485145569, 0, 0.8139614462852478, 0, 0.29155752062797546, -0.9336465001106262, 0.2080826759338379, 0, -0.7599523067474365, -0.3581957519054413, -0.5423728823661804, 0, -607.9618530273438, -286.55657958984375, -433.8983154296875, 1); background-color: rgba(0, 127, 127, 0.298039);"><div class="number">28</div><div class="symbol">Ni</div><div class="details">Nickel<br>#58.6934</div></div><div class="element" style="position: absolute; -webkit-transform: translate3d(-50%, -50%, 0px) matrix3d(-0.5259889364242554, 0, 0.8504914045333862, 0, 0.03941745311021805, -0.9989253878593445, 0.024377841502428055, 0, -0.8495774865150452, -0.04634667932987213, -0.5254237055778503, 0, -679.6619873046875, -37.07734298706055, -420.3389892578125, 1); background-color: rgba(0, 127, 127, 0.482353);"><div class="number">29</div><div class="symbol">Cu</div><div class="details">Copper<br>#63.546</div></div><div class="element" style="position: absolute; -webkit-transform: translate3d(-50%, -50%, 0px) matrix3d(-0.5290814638137817, 0, 0.8485710620880127, 0, -0.2345186173915863, -0.9610516428947449, -0.14622163772583008, 0, -0.8155205845832825, 0.2763688564300537, -0.508474588394165, 0, -652.41650390625, 221.0950927734375, -406.7796630859375, 1); background-color: rgba(0, 127, 127, 0.368627);"><div class="number">30</div><div class="symbol">Zn</div><div class="details">Zinc<br>#65.38</div></div><div class="element" style="position: absolute; -webkit-transform: translate3d(-50%, -50%, 0px) matrix3d(-0.5949347615242004, 0, 0.8037739992141724, 0, -0.452846884727478, -0.8261837363243103, -0.3351866900920868, 0, -0.6640650033950806, 0.5634007453918457, -0.49152544140815735, 0, -531.2520141601563, 450.7206115722656, -393.2203369140625, 1); background-color: rgba(0, 127, 127, 0.254902);"><div class="number">31</div><div class="symbol">Ga</div><div class="details">Gallium<br>#69.723</div></div><div class="element" style="position: absolute; -webkit-transform: translate3d(-50%, -50%, 0px) matrix3d(-0.7506161332130432, 0, 0.6607385873794556, 0, -0.5119172930717468, -0.6322489976882935, -0.5815513134002686, 0, -0.417751282453537, 0.7747652530670166, -0.47457626461982727, 0, -334.2010192871094, 619.8121948242188, -379.6610107421875, 1); background-color: rgba(0, 127, 127, 0.388235);"><div class="number">32</div><div class="symbol">Ge</div><div class="details">Germanium<br>#72.63</div></div><div class="element" style="position: absolute; -webkit-transform: translate3d(-50%, -50%, 0px) matrix3d(-0.9716132283210754, 0, 0.2365749627351761, 0, -0.20869098603725433, -0.4709972143173218, -0.8570937514305115, 0, -0.11142614483833313, 0.8821346759796143, -0.4576271176338196, 0, -89.14091491699219, 705.707763671875, -366.1016845703125, 1); background-color: rgba(0, 127, 127, 0.494118);"><div class="number">33</div><div class="symbol">As</div><div class="details">Arsenic<br>#74.9216</div></div><div class="element" style="position: absolute; -webkit-transform: translate3d(-50%, -50%, 0px) matrix3d(-0.9003133773803711, 0, -0.435242235660553, 0, 0.3795395791530609, -0.4894717335700989, -0.7850905060768127, 0, 0.21303877234458923, 0.8720191717147827, -0.4406779706478119, 0, 170.4310302734375, 697.6152954101563, -352.5423583984375, 1); background-color: rgba(0, 127, 127, 0.329412);"><div class="number">34</div><div class="symbol">Se</div><div class="details">Selenium<br>#78.96</div></div><div class="element" style="position: absolute; -webkit-transform: translate3d(-50%, -50%, 0px) matrix3d(-0.6371517777442932, 0, -0.7707383632659912, 0, 0.5755961537361145, -0.6650359034538269, -0.4758322238922119, 0, 0.5125686526298523, 0.7468113899230957, -0.4237288236618042, 0, 410.054931640625, 597.4490966796875, -338.9830627441406, 1); background-color: rgba(0, 127, 127, 0.698039);"><div class="number">35</div><div class="symbol">Br</div><div class="details">Bromine<br>#79.904</div></div><div class="element" style="position: absolute; -webkit-transform: translate3d(-50%, -50%, 0px) matrix3d(-0.47751230001449585, 0, -0.8786250352859497, 0, 0.46017906069755554, -0.8518725633621216, -0.2500966191291809, 0, 0.7484766244888306, 0.523749053478241, -0.4067796468734741, 0, 598.78125, 418.999267578125, -325.4237365722656, 1); background-color: rgba(0, 127, 127, 0.27451);"><div class="number">36</div><div class="symbol">Kr</div><div class="details">Krypton<br>#83.798</div></div><div class="element" style="position: absolute; -webkit-transform: translate3d(-50%, -50%, 0px) matrix3d(-0.4007740914821625, 0, -0.9161769151687622, 0, 0.2126370072364807, -0.972693920135498, -0.09301631152629852, 0, 0.89115971326828, 0.23209165036678314, -0.38983049988746643, 0, 712.9277954101563, 185.67332458496094, -311.8644104003906, 1); background-color: rgba(0, 127, 127, 0.521569);"><div class="number">37</div><div class="symbol">Rb</div><div class="details">Rubidium<br>#85.4678</div></div><div class="element" style="position: absolute; -webkit-transform: translate3d(-50%, -50%, 0px) matrix3d(-0.37443527579307556, 0, -0.9272530674934387, 0, -0.08438976109027863, -0.9958499073982239, 0.03407754376530647, 0, 0.92340487241745, -0.09101050347089767, -0.37288135290145874, 0, 738.7239379882813, -72.80840301513672, -298.3050842285156, 1); background-color: rgba(0, 127, 127, 0.72549);"><div class="number">38</div><div class="symbol">Sr</div><div class="details">Strontium<br>#87.62</div></div><div class="element" style="position: absolute; -webkit-transform: translate3d(-50%, -50%, 0px) matrix3d(-0.38935741782188416, 0, -0.9210867285728455, 0, -0.373380571603775, -0.9141528606414795, 0.15783366560935974, 0, 0.8420141339302063, -0.4053695797920227, -0.35593220591545105, 0, 673.6112670898438, -324.2956848144531, -284.7457580566406, 1); background-color: rgba(0, 127, 127, 0.729412);"><div class="number">39</div><div class="symbol">Y</div><div class="details">Yttrium<br>88.90585</div></div><div class="element" style="position: absolute; -webkit-transform: translate3d(-50%, -50%, 0px) matrix3d(-0.45814889669418335, 0, -0.8888754844665527, 0, -0.5979642868041992, -0.7398971319198608, 0.3082059323787689, 0, 0.6576763987541199, -0.6727200150489807, -0.33898302912712097, 0, 526.14111328125, -538.176025390625, -271.1864318847656, 1); background-color: rgba(0, 127, 127, 0.67451);"><div class="number">40</div><div class="symbol">Zr</div><div class="details">Zirconium<br>#91.224</div></div><div class="element" style="position: absolute; -webkit-transform: translate3d(-50%, -50%, 0px) matrix3d(-0.6336053609848022, 0, -0.77365642786026, 0, -0.6662774682044983, -0.5082562565803528, 0.5456646680831909, 0, 0.39321574568748474, -0.8612058758735657, -0.3220338821411133, 0, 314.5726013183594, -688.9647216796875, -257.6271057128906, 1); background-color: rgba(0, 127, 127, 0.709804);"><div class="number">41</div><div class="symbol">Nb</div><div class="details">Niobium<br>92.90628</div></div><div class="element" style="position: absolute; -webkit-transform: translate3d(-50%, -50%, 0px) matrix3d(-0.966896116733551, 0, -0.25517043471336365, 0, -0.2421352118253708, -0.31553003191947937, 0.917502760887146, 0, 0.08051393181085587, -0.9489156007766724, -0.305084764957428, 0, 64.41114807128906, -759.1324462890625, -244.0677947998047, 1); background-color: rgba(0, 127, 127, 0.454902);"><div class="number">42</div><div class="symbol">Mo</div><div class="details">Molybdenum<br>#95.96</div></div><div class="element" style="position: absolute; -webkit-transform: translate3d(-50%, -50%, 0px) matrix3d(-0.7638294696807861, 0, 0.645418107509613, 0, 0.5977357029914856, -0.37722501158714294, 0.7073990106582642, 0, -0.24346785247325897, -0.9261216521263123, -0.2881355881690979, 0, -194.7742919921875, -740.8972778320313, -230.5084686279297, 1); background-color: rgba(0, 127, 127, 0.713726);"><div class="number">43</div><div class="symbol">Tc</div><div class="details">Technetium<br>(98)</div></div><div class="element" style="position: absolute; -webkit-transform: translate3d(-50%, -50%, 0px) matrix3d(-0.44806867837905884, 0, 0.8939991593360901, 0, 0.7116658091545105, -0.6052340865135193, 0.35668399930000305, 0, -0.5410787463188171, -0.796047568321228, -0.2711864113807678, 0, -432.86297607421875, -636.8380737304688, -216.94915771484375, 1); background-color: rgba(0, 127, 127, 0.560784);"><div class="number">44</div><div class="symbol">Ru</div><div class="details">Ruthenium<br>#101.07</div></div><div class="element" style="position: absolute; -webkit-transform: translate3d(-50%, -50%, 0px) matrix3d(-0.3105197548866272, 0, 0.9505669474601746, 0, 0.5457715392112732, -0.8187475204467773, 0.17828607559204102, 0, -0.7782742977142334, -0.57415372133255, -0.2542372941970825, 0, -622.6194458007813, -459.3229675292969, -203.38983154296875, 1); background-color: rgba(0, 127, 127, 0.286275);"><div class="number">45</div><div class="symbol">Rh</div><div class="details">Rhodium<br>#102.9055</div></div><div class="element" style="position: absolute; -webkit-transform: translate3d(-50%, -50%, 0px) matrix3d(-0.24763880670070648, 0, 0.9688524007797241, 0, 0.2771795988082886, -0.9582025408744812, 0.07084714621305466, 0, -0.9283568859100342, -0.2860906422138214, -0.23728814721107483, 0, -742.6854858398438, -228.87246704101563, -189.83050537109375, 1); background-color: rgba(0, 127, 127, 0.705882);"><div class="number">46</div><div class="symbol">Pd</div><div class="details">Palladium<br>#106.42</div></div><div class="element" style="position: absolute; -webkit-transform: translate3d(-50%, -50%, 0px) matrix3d(-0.22047710418701172, 0, 0.9753921627998352, 0, -0.034528542309999466, -0.9993732571601868, -0.007804814726114273, 0, -0.974780797958374, 0.035399653017520905, -0.22033891081809998, 0, -779.8246459960938, 28.319730758666992, -176.27117919921875, 1); background-color: rgba(0, 127, 127, 0.494118);"><div class="number">47</div><div class="symbol">Ag</div><div class="details">Silver<br>#107.8682</div></div><div class="element" style="position: absolute; -webkit-transform: translate3d(-50%, -50%, 0px) matrix3d(-0.21749481558799744, 0, 0.9760614633560181, 0, -0.34577709436416626, -0.9351479411125183, -0.07704915851354599, 0, -0.9127618670463562, 0.3542574942111969, -0.20338982343673706, 0, -730.20947265625, 283.4059753417969, -162.7118682861328, 1); background-color: rgba(0, 127, 127, 0.337255);"><div class="number">48</div><div class="symbol">Cd</div><div class="details">Cadmium<br>#112.411</div></div><div class="element" style="position: absolute; -webkit-transform: translate3d(-50%, -50%, 0px) matrix3d(-0.24137656390666962, 0, 0.9704315066337585, 0, -0.6163495779037476, -0.772405743598938, -0.15330535173416138, 0, -0.749566912651062, 0.6351293921470642, -0.18644064664840698, 0, -599.6535034179688, 508.1034851074219, -149.1525421142578, 1); background-color: rgba(0, 127, 127, 0.596078);"><div class="number">49</div><div class="symbol">In</div><div class="details">Indium<br>#114.818</div></div><div class="element" style="position: absolute; -webkit-transform: translate3d(-50%, -50%, 0px) matrix3d(-0.3190355896949768, 0, 0.947742760181427, 0, -0.8029347062110901, -0.5312621593475342, -0.2702893316745758, 0, -0.5034998655319214, 0.8472074866294861, -0.16949152946472168, 0, -402.79986572265625, 677.7659912109375, -135.5932159423828, 1); background-color: rgba(0, 127, 127, 0.439216);"><div class="number">50</div><div class="symbol">Sn</div><div class="details">Tin<br>#118.71</div></div><div class="element" style="position: absolute; -webkit-transform: translate3d(-50%, -50%, 0px) matrix3d(-0.6031379103660583, 0, 0.7976369261741638, 0, -0.7717046141624451, -0.2529146075248718, -0.5835290551185608, 0, -0.2017340213060379, 0.9674885869026184, -0.152542382478714, 0, -161.38720703125, 773.9909057617188, -122.03389739990234, 1); background-color: rgba(0, 127, 127, 0.498039);"><div class="number">51</div><div class="symbol">Sb</div><div class="details">Antimony<br>#121.76</div></div><div class="element" style="position: absolute; -webkit-transform: translate3d(-50%, -50%, 0px) matrix3d(-0.7413474917411804, 0, -0.67112135887146, 0, 0.6598004102706909, -0.18290100991725922, -0.7288419604301453, 0, 0.12274879217147827, 0.9831313490867615, -0.1355932056903839, 0, 98.19902801513672, 786.5050659179688, -108.47457885742188, 1); background-color: rgba(0, 127, 127, 0.341176);"><div class="number">52</div><div class="symbol">Te</div><div class="details">Tellurium<br>127.6</div></div><div class="element" style="position: absolute; -webkit-transform: translate3d(-50%, -50%, 0px) matrix3d(-0.2632625699043274, 0, -0.9647242426872253, 0, 0.8612011075019836, -0.45066824555397034, -0.2350122630596161, 0, 0.4347705841064453, 0.8926914930343628, -0.1186440959572792, 0, 347.8164367675781, 714.1531982421875, -94.91525268554688, 1); background-color: rgba(0, 127, 127, 0.47451);"><div class="number">53</div><div class="symbol">I</div><div class="details">Iodine<br>126.90447</div></div><div class="element" style="position: absolute; -webkit-transform: translate3d(-50%, -50%, 0px) matrix3d(-0.1436215341091156, 0, -0.9896326661109924, 0, 0.6988159418106079, -0.7080755829811096, -0.10141642391681671, 0, 0.7007347345352173, 0.7061366438865662, -0.10169490426778793, 0, 560.5878295898438, 564.9093017578125, -81.3559341430664, 1); background-color: rgba(0, 127, 127, 0.65098);"><div class="number">54</div><div class="symbol">Xe</div><div class="details">Xenon<br>#131.293</div></div><div class="element" style="position: absolute; -webkit-transform: translate3d(-50%, -50%, 0px) matrix3d(-0.09456194192171097, 0, -0.9955189824104309, 0, 0.4416760802268982, -0.8961931467056274, -0.04195374995470047, 0, 0.8921772837638855, 0.4436641335487366, -0.08474575728178024, 0, 713.7418212890625, 354.93133544921875, -67.7966079711914, 1); background-color: rgba(0, 127, 127, 0.635294);"><div class="number">55</div><div class="symbol">Cs</div><div class="details">Caesium<br>#132.9054</div></div><div class="element" style="position: absolute; -webkit-transform: translate3d(-50%, -50%, 0px) matrix3d(-0.06840868294239044, 0, -0.9976573586463928, 0, 0.13315604627132416, -0.99105304479599, -0.00913041178137064, 0, 0.9887313842773438, 0.13346870243549347, -0.06779663264751434, 0, 790.985107421875, 106.77490997314453, -54.23728942871094, 1); background-color: rgba(0, 127, 127, 0.498039);"><div class="number">56</div><div class="symbol">Ba</div><div class="details">Barium<br>#132.9054</div></div><div class="element" style="position: absolute; -webkit-transform: translate3d(-50%, -50%, 0px) matrix3d(-0.05180415138602257, 0, -0.9986572861671448, 0, -0.19104047119617462, -0.9815321564674377, 0.009909996762871742, 0, 0.9802141785621643, -0.19129733741283417, -0.05084744095802307, 0, 784.1713256835938, -153.0378875732422, -40.6779670715332, 1); background-color: rgba(0, 127, 127, 0.701961);"><div class="number">57</div><div class="symbol">La</div><div class="details">Lanthanum<br>138.90547</div></div><div class="element" style="position: absolute; -webkit-transform: translate3d(-50%, -50%, 0px) matrix3d(-0.03904004022479057, 0, -0.9992376565933228, 0, -0.49566876888275146, -0.8682957291603088, 0.019365694373846054, 0, 0.8676337599754333, -0.49604693055152893, -0.03389829769730568, 0, 694.1069946289063, -396.8375549316406, -27.11864471435547, 1); background-color: rgba(0, 127, 127, 0.662745);"><div class="number">58</div><div class="symbol">Ce</div><div class="details">Cerium<br>#140.116</div></div><div class="element" style="position: absolute; -webkit-transform: translate3d(-50%, -50%, 0px) matrix3d(-0.025554921478033066, 0, -0.9996734261512756, 0, -0.7481587529182434, -0.6632440686225891, 0.019125375896692276, 0, 0.6630274653434753, -0.7484031915664673, -0.016949160024523735, 0, 530.4219360351563, -598.7225341796875, -13.559322357177734, 1); background-color: rgba(0, 127, 127, 0.337255);"><div class="number">59</div><div class="symbol">Pr</div><div class="details">Praseodymium<br>140.90765</div></div><div class="element" style="position: absolute; -webkit-transform: translate3d(-50%, -50%, 0px) matrix3d(0, 0, -1, 0, -0.9215927720069885, -0.3881581425666809, 0, 0, 0.3881581425666809, -0.9215927720069885, 0, 0, 310.5264892578125, -737.2742309570313, 0, 1); background-color: rgba(0, 127, 127, 0.658824);"><div class="number">60</div><div class="symbol">Nd</div><div class="details">Neodymium<br>#144.242</div></div><div class="element" style="position: absolute; -webkit-transform: translate3d(-50%, -50%, 0px) matrix3d(0.2285158783197403, 0, -0.973540186882019, 0, -0.970858633518219, -0.07417057454586029, -0.22788643836975098, 0, 0.07220803201198578, -0.9972455501556396, 0.016949158161878586, 0, 57.766422271728516, -797.7964477539063, 13.559322357177734, 1); background-color: rgba(0, 127, 127, 0.294118);"><div class="number">61</div><div class="symbol">Pm</div><div class="details">Promethium<br>(145)</div></div><div class="element" style="position: absolute; -webkit-transform: translate3d(-50%, -50%, 0px) matrix3d(0.1336856484413147, 0, 0.9910237789154053, 0, 0.9586349129676819, -0.25356724858283997, -0.129316508769989, 0, -0.2512911856174469, -0.9673177599906921, 0.03389830142259598, 0, -201.03294372558594, -773.8541870117188, 27.11864471435547, 1); background-color: rgba(0, 127, 127, 0.686275);"><div class="number">62</div><div class="symbol">Sm</div><div class="details">Samarium<br>#150.36</div></div><div class="element" style="position: absolute; -webkit-transform: translate3d(-50%, -50%, 0px) matrix3d(0.09239386767148972, 0, 0.9957225322723389, 0, 0.8313733339309692, -0.5503336787223816, -0.07714378088712692, 0, -0.5479796528816223, -0.8349447846412659, 0.050847455859184265, 0, -438.38372802734375, -667.9558715820313, 40.6779670715332, 1); background-color: rgba(0, 127, 127, 0.368627);"><div class="number">63</div><div class="symbol">Eu</div><div class="details">Europium<br>#151.964</div></div><div class="element" style="position: absolute; -webkit-transform: translate3d(-50%, -50%, 0px) matrix3d(0.08590537309646606, 0, 0.9963033199310303, 0, 0.6118649840354919, -0.7892007827758789, -0.05275752767920494, 0, -0.7862833738327026, -0.614135205745697, 0.06779658049345016, 0, -629.0266723632813, -491.3081970214844, 54.23728942871094, 1); background-color: rgba(0, 127, 127, 0.635294);"><div class="number">64</div><div class="symbol">Gd</div><div class="details">Gadolinium<br>#157.25</div></div><div class="element" style="position: absolute; -webkit-transform: translate3d(-50%, -50%, 0px) matrix3d(0.08971961587667465, 0, 0.9959670901298523, 0, 0.327008455991745, -0.9445621967315674, -0.029457876458764076, 0, -0.9407528042793274, -0.3283326029777527, 0.08474575728178024, 0, -752.6022338867188, -262.6661071777344, 67.7966079711914, 1); background-color: rgba(0, 127, 127, 0.54902);"><div class="number">65</div><div class="symbol">Tb</div><div class="details">Terbium<br>158.92535</div></div><div class="element" style="position: absolute; -webkit-transform: translate3d(-50%, -50%, 0px) matrix3d(0.10169824957847595, 0, 0.9948152899742126, 0, 0.00794344674795866, -0.9999681115150452, -0.000812044192571193, 0, -0.9947835803031921, -0.007984844967722893, 0.10169500857591629, 0, -795.8268432617188, -6.387870788574219, 81.3559341430664, 1); background-color: rgba(0, 127, 127, 0.317647);"><div class="number">66</div><div class="symbol">Dy</div><div class="details">Dysprosium<br>162.5</div></div><div class="element" style="position: absolute; -webkit-transform: translate3d(-50%, -50%, 0px) matrix3d(0.12490525841712952, 0, 0.992168664932251, 0, -0.3101898431777954, -0.9498722553253174, 0.03905016556382179, 0, -0.9424335360527039, 0.31263822317123413, 0.11864403635263443, 0, -753.94677734375, 250.110595703125, 94.91525268554688, 1); background-color: rgba(0, 127, 127, 0.345098);"><div class="number">67</div><div class="symbol">Ho</div><div class="details">Holmium<br>164.93032</div></div><div class="element" style="position: absolute; -webkit-transform: translate3d(-50%, -50%, 0px) matrix3d(0.16934257745742798, 0, 0.9855572581291199, 0, -0.5904085636138916, -0.8007036447525024, 0.10144645720720291, 0, -0.7891392707824707, 0.5990606546401978, 0.1355932205915451, 0, -631.3114013671875, 479.24853515625, 108.47457885742188, 1); background-color: rgba(0, 127, 127, 0.588235);"><div class="number">68</div><div class="symbol">Er</div><div class="details">Erbium<br>#167.259</div></div><div class="element" style="position: absolute; -webkit-transform: translate3d(-50%, -50%, 0px) matrix3d(0.26670143008232117, 0, 0.9637792110443115, 0, -0.7905707359313965, -0.5719592571258545, 0.21877041459083557, 0, -0.551242470741272, 0.8202820420265198, 0.1525423377752304, 0, -440.99395751953125, 656.2255859375, 122.03389739990234, 1); background-color: rgba(0, 127, 127, 0.717647);"><div class="number">69</div><div class="symbol">Tm</div><div class="details">Thulium<br>168.93421</div></div><div class="element" style="position: absolute; -webkit-transform: translate3d(-50%, -50%, 0px) matrix3d(0.5545240640640259, 0, 0.8321676850318909, 0, -0.7923428416252136, -0.3056522309780121, 0.5279863476753235, 0, -0.25435391068458557, 0.9521431922912598, 0.16949152946472168, 0, -203.48313903808594, 761.714599609375, 135.5932159423828, 1); background-color: rgba(0, 127, 127, 0.443137);"><div class="number">70</div><div class="symbol">Yb</div><div class="details">Ytterbium<br>#173.054</div></div><div class="element" style="position: absolute; -webkit-transform: translate3d(-50%, -50%, 0px) matrix3d(0.9373493194580078, 0, -0.3483909070491791, 0, 0.34142985939979553, -0.19890201091766357, 0.9186205267906189, 0, 0.06929564476013184, 0.9800193905830383, 0.18644066154956818, 0, 55.436527252197266, 784.0155029296875, 149.1525421142578, 1); background-color: rgba(0, 127, 127, 0.690196);"><div class="number">71</div><div class="symbol">Lu</div><div class="details">Lutetium<br>#174.9668</div></div><div class="element" style="position: absolute; -webkit-transform: translate3d(-50%, -50%, 0px) matrix3d(0.46780896186828613, 0, -0.8838295936584473, 0, 0.7959247827529907, -0.4347711205482483, 0.4212811589241028, 0, 0.3842636048793793, 0.9005410075187683, 0.20338983833789825, 0, 307.410888671875, 720.4328002929688, 162.7118682861328, 1); background-color: rgba(0, 127, 127, 0.32549);"><div class="number">72</div><div class="symbol">Hf</div><div class="details">Hafnium<br>#178.49</div></div><div class="element" style="position: absolute; -webkit-transform: translate3d(-50%, -50%, 0px) matrix3d(0.31852397322654724, 0, -0.9479147791862488, 0, 0.6845243573188782, -0.6917501091957092, 0.23001793026924133, 0, 0.6557201743125916, 0.7221369743347168, 0.22033900022506714, 0, 524.5761108398438, 577.7095947265625, 176.27117919921875, 1); background-color: rgba(0, 127, 127, 0.462745);"><div class="number">73</div><div class="symbol">Ta</div><div class="details">Tantalum<br>180.94788</div></div><div class="element" style="position: absolute; -webkit-transform: translate3d(-50%, -50%, 0px) matrix3d(0.26791834831237793, 0, -0.9634416103363037, 0, 0.44733428955078125, -0.885673463344574, 0.12439680844545364, 0, 0.8532946705818176, 0.46430864930152893, 0.23728816211223602, 0, 682.6357421875, 371.4468994140625, 189.83050537109375, 1); background-color: rgba(0, 127, 127, 0.407843);"><div class="number">74</div><div class="symbol">W</div><div class="details">Tungsten<br>#183.84</div></div><div class="element" style="position: absolute; -webkit-transform: translate3d(-50%, -50%, 0px) matrix3d(0.25737500190734863, 0, -0.9663115739822388, 0, 0.15042799711227417, -0.9878087639808655, 0.04006616771221161, 0, 0.9545310735702515, 0.1556723415851593, 0.2542372941970825, 0, 763.6248168945313, 124.53787994384766, 203.38983154296875, 1); background-color: rgba(0, 127, 127, 0.698039);"><div class="number">75</div><div class="symbol">Re</div><div class="details">Rhenium<br>#186.207</div></div><div class="element" style="position: absolute; -webkit-transform: translate3d(-50%, -50%, 0px) matrix3d(0.2751469016075134, 0, -0.961402177810669, 0, -0.16253313422203064, -0.9856060147285461, -0.046515896916389465, 0, 0.9475638270378113, -0.1690584123134613, 0.2711864411830902, 0, 758.051025390625, -135.24673461914063, 216.94915771484375, 1); background-color: rgba(0, 127, 127, 0.458824);"><div class="number">76</div><div class="symbol">Os</div><div class="details">Osmium<br>#190.23</div></div><div class="element" style="position: absolute; -webkit-transform: translate3d(-50%, -50%, 0px) matrix3d(0.32700440287590027, 0, -0.9450228214263916, 0, -0.44686511158943176, -0.8811366558074951, -0.15462788939476013, 0, 0.8326942324638367, -0.47286173701286316, 0.2881355583667755, 0, 666.1553955078125, -378.2893981933594, 230.5084686279297, 1); background-color: rgba(0, 127, 127, 0.545098);"><div class="number">77</div><div class="symbol">Ir</div><div class="details">Iridium<br>#192.217</div></div><div class="element" style="position: absolute; -webkit-transform: translate3d(-50%, -50%, 0px) matrix3d(0.44000107049942017, 0, -0.897997260093689, 0, -0.6470780372619629, -0.6933727264404297, -0.3170555531978607, 0, 0.6226468086242676, -0.7205790877342224, 0.305084764957428, 0, 498.1174621582031, -576.4632568359375, 244.0677947998047, 1); background-color: rgba(0, 127, 127, 0.454902);"><div class="number">78</div><div class="symbol">Pt</div><div class="details">Platinum<br>#195.084</div></div><div class="element" style="position: absolute; -webkit-transform: translate3d(-50%, -50%, 0px) matrix3d(0.686151385307312, 0, -0.7274587750434875, 0, -0.6423613429069519, -0.46933358907699585, -0.6058860421180725, 0, 0.34142085909843445, -0.8830209374427795, 0.3220338821411133, 0, 273.1366882324219, -706.416748046875, 257.6271057128906, 1); background-color: rgba(0, 127, 127, 0.34902);"><div class="number">79</div><div class="symbol">Au</div><div class="details">Gold<br>196.966569</div></div><div class="element" style="position: absolute; -webkit-transform: translate3d(-50%, -50%, 0px) matrix3d(0.9979386329650879, 0, -0.0641753152012825, 0, -0.06035944074392319, -0.33968326449394226, -0.9386010766029358, 0, 0.021799281239509583, -0.9405398964881897, 0.33898305892944336, 0, 17.439422607421875, -752.431884765625, 271.1864318847656, 1); background-color: rgba(0, 127, 127, 0.278431);"><div class="number">80</div><div class="symbol">Hg</div><div class="details">Mercury<br>#200.59</div></div><div class="element" style="position: absolute; -webkit-transform: translate3d(-50%, -50%, 0px) matrix3d(0.7664642930030823, 0, 0.6422868967056274, 0, 0.5688318014144897, -0.46438196301460266, -0.6788076162338257, 0, -0.2982664406299591, -0.8856350183486938, 0.35593220591545105, 0, -238.61317443847656, -708.5079956054688, 284.7457580566406, 1); background-color: rgba(0, 127, 127, 0.278431);"><div class="number">81</div><div class="symbol">Tl</div><div class="details">Thallium<br>#204.3833</div></div><div class="element" style="position: absolute; -webkit-transform: translate3d(-50%, -50%, 0px) matrix3d(0.5407567620277405, 0, 0.8411790132522583, 0, 0.6092101335525513, -0.6895546317100525, -0.3916342258453369, 0, -0.5800389051437378, -0.7242336273193359, 0.37288132309913635, 0, -464.0310974121094, -579.3869018554688, 298.3050842285156, 1); background-color: rgba(0, 127, 127, 0.25098);"><div class="number">82</div><div class="symbol">Pb</div><div class="details">Lead<br>207.2</div></div><div class="element" style="position: absolute; -webkit-transform: translate3d(-50%, -50%, 0px) matrix3d(0.44311150908470154, 0, 0.8964664936065674, 0, 0.4262010455131531, -0.8797572255134583, -0.2106654942035675, 0, -0.7886728644371033, -0.47542324662208557, 0.3898305296897888, 0, -630.9382934570313, -380.3385925292969, 311.8644104003906, 1); background-color: rgba(0, 127, 127, 0.596078);"><div class="number">83</div><div class="symbol">Bi</div><div class="details">Bismuth<br>#208.9804</div></div><div class="element" style="position: absolute; -webkit-transform: translate3d(-50%, -50%, 0px) matrix3d(0.41275715827941895, 0, 0.9108411073684692, 0, 0.15445107221603394, -0.985518217086792, -0.0699911117553711, 0, -0.8976504802703857, -0.1695697158575058, 0.4067797064781189, 0, -718.1204223632813, -135.65576171875, 325.4237365722656, 1); background-color: rgba(0, 127, 127, 0.298039);"><div class="number">84</div><div class="symbol">Po</div><div class="details">Polonium<br>(209)</div></div><div class="element" style="position: absolute; -webkit-transform: translate3d(-50%, -50%, 0px) matrix3d(0.4289162755012512, 0, 0.9033442735671997, 0, -0.1400691270828247, -0.9879056215286255, 0.06650613248348236, 0, -0.8924188613891602, 0.1550562083721161, 0.4237287938594818, 0, -713.9351196289063, 124.04496002197266, 338.9830627441406, 1); background-color: rgba(0, 127, 127, 0.494118);"><div class="number">85</div><div class="symbol">At</div><div class="details">Astatine<br>(210)</div></div><div class="element" style="position: absolute; -webkit-transform: translate3d(-50%, -50%, 0px) matrix3d(0.495392769575119, 0, 0.8686690926551819, 0, -0.3968363404273987, -0.8895527124404907, 0.2263115495443344, 0, -0.7727269530296326, 0.45683255791664124, 0.4406779706478119, 0, -618.1815795898438, 365.466064453125, 352.5423583984375, 1); background-color: rgba(0, 127, 127, 0.282353);"><div class="number">86</div><div class="symbol">Rn</div><div class="details">Radon<br>(222)</div></div><div class="element" style="position: absolute; -webkit-transform: translate3d(-50%, -50%, 0px) matrix3d(0.6373589038848877, 0, 0.7705670595169067, 0, -0.5363436341285706, -0.718005359172821, 0.4436257481575012, 0, -0.5532712936401367, 0.6960375905036926, 0.4576271176338196, 0, -442.6170349121094, 556.830078125, 366.1016845703125, 1); background-color: rgba(0, 127, 127, 0.678431);"><div class="number">87</div><div class="symbol">Fr</div><div class="details">Francium<br>(223)</div></div><div class="element" style="position: absolute; -webkit-transform: translate3d(-50%, -50%, 0px) matrix3d(0.8751094341278076, 0, 0.4839250445365906, 0, -0.4065849483013153, -0.542305052280426, 0.7352509498596191, 0, -0.2624349892139435, 0.8401816487312317, 0.47457626461982727, 0, -209.94798278808594, 672.1453247070313, 379.6610107421875, 1); background-color: rgba(0, 127, 127, 0.737255);"><div class="number">88</div><div class="symbol">Ra</div><div class="details">Radium<br>(226)</div></div><div class="element" style="position: absolute; -webkit-transform: translate3d(-50%, -50%, 0px) matrix3d(0.9924174547195435, 0, -0.12291286140680313, 0, 0.10677844285964966, -0.495280921459198, 0.8621456623077393, 0, 0.06087639555335045, 0.8687328696250916, 0.49152544140815735, 0, 48.701114654541016, 694.986328125, 393.2203369140625, 1); background-color: rgba(0, 127, 127, 0.447059);"><div class="number">89</div><div class="symbol">Ac</div><div class="details">Actinium<br>(227)</div></div><div class="element" style="position: absolute; -webkit-transform: translate3d(-50%, -50%, 0px) matrix3d(0.8070340752601624, 0, -0.5905048251152039, 0, 0.4585576057434082, -0.6300534009933472, 0.6267037987709045, 0, 0.37204957008361816, 0.7765517830848694, 0.508474588394165, 0, 297.6396789550781, 621.241455078125, 406.7796630859375, 1); background-color: rgba(0, 127, 127, 0.745098);"><div class="number">90</div><div class="symbol">Th</div><div class="details">Thorium<br>232.03806</div></div><div class="element" style="position: absolute; -webkit-transform: translate3d(-50%, -50%, 0px) matrix3d(0.6424537897109985, 0, -0.7663244605064392, 0, 0.4409792125225067, -0.8178389668464661, 0.3696981966495514, 0, 0.6267299652099609, 0.575447142124176, 0.5254237055778503, 0, 501.3840026855469, 460.35772705078125, 420.3389892578125, 1); background-color: rgba(0, 127, 127, 0.521569);"><div class="number">91</div><div class="symbol">Pa</div><div class="details">Protactinium<br>#231.0588</div></div><div class="element" style="position: absolute; -webkit-transform: translate3d(-50%, -50%, 0px) matrix3d(0.5673502087593079, 0, -0.8234766125679016, 0, 0.24164636433124542, -0.9559754729270935, 0.1664869636297226, 0, 0.7872234582901001, 0.29344654083251953, 0.5423728823661804, 0, 629.7787475585938, 234.75721740722656, 433.8983154296875, 1); background-color: rgba(0, 127, 127, 0.490196);"><div class="number">92</div><div class="symbol">U</div><div class="details">Uranium<br>238.02891</div></div><div class="element" style="position: absolute; -webkit-transform: translate3d(-50%, -50%, 0px) matrix3d(0.5595470070838928, 0, -0.8287985920906067, 0, -0.02350156381726265, -0.9995979070663452, -0.01586661860346794, 0, 0.8284653425216675, -0.02835618332028389, 0.5593219995498657, 0, 662.7722778320313, -22.684947967529297, 447.4576416015625, 1); background-color: rgba(0, 127, 127, 0.337255);"><div class="number">93</div><div class="symbol">Np</div><div class="details">Neptunium<br>(237)</div></div><div class="element" style="position: absolute; -webkit-transform: translate3d(-50%, -50%, 0px) matrix3d(0.6130576729774475, 0, -0.7900381684303284, 0, -0.26955148577690125, -0.9399951100349426, -0.20916786789894104, 0, 0.7426320314407349, -0.3411879241466522, 0.5762711763381958, 0, 594.1055908203125, -272.9503479003906, 461.0169372558594, 1); background-color: rgba(0, 127, 127, 0.309804);"><div class="number">94</div><div class="symbol">Pu</div><div class="details">Plutonium<br>(244)</div></div><div class="element" style="position: absolute; -webkit-transform: translate3d(-50%, -50%, 0px) matrix3d(0.7385464906692505, 0, -0.674202561378479, 0, -0.40160447359085083, -0.8032268285751343, -0.4399324357509613, 0, 0.5415375828742981, -0.5956733226776123, 0.5932203531265259, 0, 433.23004150390625, -476.53863525390625, 474.5762634277344, 1); background-color: rgba(0, 127, 127, 0.607843);"><div class="number">95</div><div class="symbol">Am</div><div class="details">Americium<br>(243)</div></div><div class="element" style="position: absolute; -webkit-transform: translate3d(-50%, -50%, 0px) matrix3d(0.9220421314239502, 0, -0.3870896100997925, 0, -0.29020756483078003, -0.6617587804794312, -0.6912704706192017, 0, 0.2561599612236023, -0.7497168183326721, 0.6101694703102112, 0, 204.92796325683594, -599.7734375, 488.1355895996094, 1); background-color: rgba(0, 127, 127, 0.631373);"><div class="number">96</div><div class="symbol">Cm</div><div class="details">Curium<br>(247)</div></div><div class="element" style="position: absolute; -webkit-transform: translate3d(-50%, -50%, 0px) matrix3d(0.9943387508392334, 0, 0.10625657439231873, 0, 0.08245888352394104, -0.6306891441345215, -0.7716422080993652, 0, -0.06701486557722092, -0.7760355472564697, 0.6271186470985413, 0, -53.61189270019531, -620.8284301757813, 501.6949157714844, 1); background-color: rgba(0, 127, 127, 0.603922);"><div class="number">97</div><div class="symbol">Bk</div><div class="details">Berkelium<br>(247)</div></div><div class="element" style="position: absolute; -webkit-transform: translate3d(-50%, -50%, 0px) matrix3d(0.8655410408973694, 0, 0.5008379817008972, 0, 0.3345819115638733, -0.7441216111183167, -0.5782197117805481, 0, -0.3726843595504761, -0.6680442094802856, 0.6440677642822266, 0, -298.1474914550781, -534.4353637695313, 515.2542114257813, 1); background-color: rgba(0, 127, 127, 0.580392);"><div class="number">98</div><div class="symbol">Cf</div><div class="details">Californium<br>(251)</div></div><div class="element" style="position: absolute; -webkit-transform: translate3d(-50%, -50%, 0px) matrix3d(0.7372425198554993, 0, 0.6756281852722168, 0, 0.29918625950813293, -0.8966071605682373, -0.3264707326889038, 0, -0.6057730913162231, -0.4428267776966095, 0.6610169410705566, 0, -484.61846923828125, -354.2614440917969, 528.8135375976563, 1); background-color: rgba(0, 127, 127, 0.333333);"><div class="number">99</div><div class="symbol">Es</div><div class="details">Einstenium<br>(252)</div></div><div class="element" style="position: absolute; -webkit-transform: translate3d(-50%, -50%, 0px) matrix3d(0.6847279667854309, 0, 0.7287987470626831, 0, 0.10216964781284332, -0.9901247620582581, -0.09599140286445618, 0, -0.721601665019989, -0.14018911123275757, 0.6779661178588867, 0, -577.2813110351563, -112.15129089355469, 542.3728637695313, 1); background-color: rgba(0, 127, 127, 0.737255);"><div class="number">100</div><div class="symbol">Fm</div><div class="details">Fermium<br>(257)</div></div><div class="element" style="position: absolute; -webkit-transform: translate3d(-50%, -50%, 0px) matrix3d(0.7068146467208862, 0, 0.7073987722396851, 0, -0.12925681471824646, -0.9831647276878357, 0.12915009260177612, 0, -0.6954895257949829, 0.18272128701210022, 0.6949152946472168, 0, -556.3916625976563, 146.17703247070313, 555.9321899414063, 1); background-color: rgba(0, 127, 127, 0.670588);"><div class="number">101</div><div class="symbol">Md</div><div class="details">Mendelevium<br>(258)</div></div><div class="element" style="position: absolute; -webkit-transform: translate3d(-50%, -50%, 0px) matrix3d(0.8021988868713379, 0, 0.5970568656921387, 0, -0.2752532660961151, -0.8873913884162903, 0.36982715129852295, 0, -0.5298231840133667, 0.46101680397987366, 0.7118644118309021, 0, -423.8585205078125, 368.8134460449219, 569.4915161132813, 1); background-color: rgba(0, 127, 127, 0.670588);"><div class="number">102</div><div class="symbol">No</div><div class="details">Nobelium<br>(259)</div></div><div class="element" style="position: absolute; -webkit-transform: translate3d(-50%, -50%, 0px) matrix3d(0.9432281851768494, 0, 0.33214545249938965, 0, -0.2108445018529892, -0.7726799845695496, 0.5987572073936462, 0, -0.2566421329975128, 0.6347957253456116, 0.7288135886192322, 0, -205.313720703125, 507.8365783691406, 583.0508422851563, 1); background-color: rgba(0, 127, 127, 0.490196);"><div class="number">103</div><div class="symbol">Lr</div><div class="details">Lawrencium<br>(262)</div></div><div class="element" style="position: absolute; -webkit-transform: translate3d(-50%, -50%, 0px) matrix3d(0.9961320757865906, 0, -0.0878683477640152, 0, 0.05825284123420715, -0.7486584782600403, 0.660391628742218, 0, 0.06578338146209717, 0.6629558801651001, 0.7457627058029175, 0, 52.626705169677734, 530.36474609375, 596.6101684570313, 1); background-color: rgba(0, 127, 127, 0.552941);"><div class="number">104</div><div class="symbol">Rf</div><div class="details">Rutherfordium<br>(267)</div></div><div class="element" style="position: absolute; -webkit-transform: translate3d(-50%, -50%, 0px) matrix3d(0.9029385447502136, 0, -0.42976972460746765, 0, 0.23003019392490387, -0.8446996808052063, 0.48328936100006104, 0, 0.36302632093429565, 0.5352405905723572, 0.7627118825912476, 0, 290.4210510253906, 428.1924743652344, 610.1694946289063, 1); background-color: rgba(0, 127, 127, 0.564706);"><div class="number">105</div><div class="symbol">Db</div><div class="details">Dubnium<br>(268)</div></div><div class="element" style="position: absolute; -webkit-transform: translate3d(-50%, -50%, 0px) matrix3d(0.8119476437568665, 0, -0.5837302803993225, 0, 0.16297224164009094, -0.960235595703125, 0.2266884744167328, 0, 0.5605185627937317, 0.2791909873485565, 0.7796609997749329, 0, 448.41485595703125, 223.35279846191406, 623.7288208007813, 1); background-color: rgba(0, 127, 127, 0.580392);"><div class="number">106</div><div class="symbol">Sg</div><div class="details">Seaborgium<br>(271)</div></div><div class="element" style="position: absolute; -webkit-transform: translate3d(-50%, -50%, 0px) matrix3d(0.7972863912582397, 0, -0.6036012172698975, 0, -0.02485462836921215, -0.999151885509491, -0.032830048352479935, 0, 0.6030892729759216, -0.041177235543727875, 0.7966101765632629, 0, 482.4714050292969, -32.94178771972656, 637.2881469726563, 1); background-color: rgba(0, 127, 127, 0.45098);"><div class="number">107</div><div class="symbol">Bh</div><div class="details">Bohrium<br>(272)</div></div><div class="element" style="position: absolute; -webkit-transform: translate3d(-50%, -50%, 0px) matrix3d(0.8641485571861267, 0, -0.5032367706298828, 0, -0.16965678334236145, -0.9414576888084412, -0.29133138060569763, 0, 0.4737761318683624, -0.337131142616272, 0.8135592937469482, 0, 379.0209045410156, -269.7049255371094, 650.8474731445313, 1); background-color: rgba(0, 127, 127, 0.623529);"><div class="number">108</div><div class="symbol">Hs</div><div class="details">Hassium<br>(270)</div></div><div class="element" style="position: absolute; -webkit-transform: translate3d(-50%, -50%, 0px) matrix3d(0.9705498218536377, 0, -0.24090038239955902, 0, -0.1246555745601654, -0.8557092547416687, -0.5022177696228027, 0, 0.2061406821012497, -0.5174569487571716, 0.8305084705352783, 0, 164.9125518798828, -413.9655456542969, 664.4067993164063, 1); background-color: rgba(0, 127, 127, 0.27451);"><div class="number">109</div><div class="symbol">Mt</div><div class="details">Meitnerium<br>(276)</div></div><div class="element" style="position: absolute; -webkit-transform: translate3d(-50%, -50%, 0px) matrix3d(0.9907197952270508, 0, 0.13592003285884857, 0, 0.07040315866470337, -0.8553958535194397, -0.5131679177284241, 0, -0.1162654384970665, -0.517974853515625, 0.8474576473236084, 0, -93.0123519897461, -414.3798522949219, 677.9661254882813, 1); background-color: rgba(0, 127, 127, 0.341176);"><div class="number">110</div><div class="symbol">Ds</div><div class="details">Darmstadium<br>(281)</div></div><div class="element" style="position: absolute; -webkit-transform: translate3d(-50%, -50%, 0px) matrix3d(0.9160491228103638, 0, 0.4010661542415619, 0, 0.13275954127311707, -0.9436249136924744, -0.30322742462158203, 0, -0.3784560263156891, -0.33101657032966614, 0.8644067645072937, 0, -302.7648010253906, -264.8132629394531, 691.5254516601563, 1); background-color: rgba(0, 127, 127, 0.458824);"><div class="number">111</div><div class="symbol">Rg</div><div class="details">Roentgenium<br>(280)</div></div><div class="element" style="position: absolute; -webkit-transform: translate3d(-50%, -50%, 0px) matrix3d(0.8815965056419373, 0, 0.47200384736061096, 0, 0.011025601997971535, -0.9997271299362183, -0.02059333212673664, 0, -0.47187507152557373, -0.023359136655926704, 0.8813559412956238, 0, -377.50006103515625, -18.68730926513672, 705.084716796875, 1); background-color: rgba(0, 127, 127, 0.47451);"><div class="number">112</div><div class="symbol">Cn</div><div class="details">Copernicium<br>(285)</div></div><div class="element" style="position: absolute; -webkit-transform: translate3d(-50%, -50%, 0px) matrix3d(0.9333765506744385, 0, 0.3588985502719879, 0, -0.09745786339044571, -0.962425172328949, 0.2534556984901428, 0, -0.3454129993915558, 0.2715471088886261, 0.8983051180839539, 0, -276.3304138183594, 217.23768615722656, 718.64404296875, 1); background-color: rgba(0, 127, 127, 0.407843);"><div class="number">113</div><div class="symbol">Uut</div><div class="details">Unutrium<br>(284)</div></div><div class="element" style="position: absolute; -webkit-transform: translate3d(-50%, -50%, 0px) matrix3d(0.9983821511268616, 0, 0.05685993656516075, 0, -0.022715000435709953, -0.9167373776435852, 0.3988441228866577, 0, -0.05212562531232834, 0.3994904160499573, 0.9152542352676392, 0, -41.70050048828125, 319.59234619140625, 732.203369140625, 1); background-color: rgba(0, 127, 127, 0.376471);"><div class="number">114</div><div class="symbol">Fl</div><div class="details">Flerovium<br>(289)</div></div><div class="element" style="position: absolute; -webkit-transform: translate3d(-50%, -50%, 0px) matrix3d(0.968519926071167, 0, -0.24893605709075928, 0, 0.0675290897488594, -0.9625030755996704, 0.2627311944961548, 0, 0.2396017163991928, 0.2712708115577698, 0.9322034120559692, 0, 191.68136596679688, 217.01666259765625, 745.7626953125, 1); background-color: rgba(0, 127, 127, 0.529412);"><div class="number">115</div><div class="symbol">Uup</div><div class="details">Ununpentium<br>(288)</div></div><div class="element" style="position: absolute; -webkit-transform: translate3d(-50%, -50%, 0px) matrix3d(0.9497931003570557, 0, -0.31287869811058044, 0, -0.0114889619871974, -0.9993255734443665, -0.03487657383084297, 0, 0.3126676678657532, -0.03672017902135849, 0.9491525292396545, 0, 250.13414001464844, -29.376144409179688, 759.322021484375, 1); background-color: rgba(0, 127, 127, 0.258824);"><div class="number">116</div><div class="symbol">Lv</div><div class="details">Livermorium<br>(293)</div></div><div class="element" style="position: absolute; -webkit-transform: translate3d(-50%, -50%, 0px) matrix3d(0.9965876340866089, 0, -0.08254173398017883, 0, -0.02025972120463848, -0.969409704208374, -0.24461066722869873, 0, 0.08001675456762314, -0.24544823169708252, 0.9661017060279846, 0, 64.0134048461914, -196.35858154296875, 772.88134765625, 1); background-color: rgba(0, 127, 127, 0.521569);"><div class="number">117</div><div class="symbol">Uus</div><div class="details">Ununseptium<br>(294)</div></div><div class="element" style="position: absolute; -webkit-transform: translate3d(-50%, -50%, 0px) matrix3d(0.9856662154197693, 0, 0.1687072515487671, 0, 0.012281766161322594, -0.9973466396331787, -0.0717557892203331, 0, -0.1682596057653427, -0.07279927283525467, 0.9830508232116699, 0, -134.60768127441406, -58.23942184448242, 786.440673828125, 1); background-color: rgba(0, 127, 127, 0.694118);"><div class="number">118</div><div class="symbol">Uuo</div><div class="details">Ununoctium<br>(294)</div></div></div></div></div>
+<div id="info">超炫的HTML5 3D效果</div>
+<div id="menu">
+<button id="table">表面</button>
+<button id="sphere">球体</button>
+<button id="helix">螺旋</button>
+<button id="grid">网格</button>
+</div>
+<div style="display: none;">更多HTML5 CSS动画请访问 <a href="http://www.5iweb.com.cn/">网页特效库</a>.</div>
+<script>
+
+var table = [
+	"H", "Hydrogen", "1.00794", 1, 1,
+	"He", "Helium", "4.002602", 18, 1,
+	"Li", "Lithium", "#6.941", 1, 2,
+	"Be", "Beryllium", "9.012182", 2, 2,
+	"B", "Boron", "#10.811", 13, 2,
+	"C", "Carbon", "#12.0107", 14, 2,
+	"N", "Nitrogen", "#14.0067", 15, 2,
+	"O", "Oxygen", "#15.9994", 16, 2,
+	"F", "Fluorine", "18.9984032", 17, 2,
+	"Ne", "Neon", "#20.1797", 18, 2,
+	"Na", "Sodium", "22.98976...", 1, 3,
+	"Mg", "Magnesium", "#24.305", 2, 3,
+	"Al", "Aluminium", "26.9815386", 13, 3,
+	"Si", "Silicon", "#28.0855", 14, 3,
+	"P", "Phosphorus", "30.973762", 15, 3,
+	"S", "Sulfur", "#32.065", 16, 3,
+	"Cl", "Chlorine", "#35.453", 17, 3,
+	"Ar", "Argon", "#39.948", 18, 3,
+	"K", "Potassium", "#39.948", 1, 4,
+	"Ca", "Calcium", "#40.078", 2, 4,
+	"Sc", "Scandium", "44.955912", 3, 4,
+	"Ti", "Titanium", "#47.867", 4, 4,
+	"V", "Vanadium", "#50.9415", 5, 4,
+	"Cr", "Chromium", "#51.9961", 6, 4,
+	"Mn", "Manganese", "54.938045", 7, 4,
+	"Fe", "Iron", "#55.845", 8, 4,
+	"Co", "Cobalt", "58.933195", 9, 4,
+	"Ni", "Nickel", "#58.6934", 10, 4,
+	"Cu", "Copper", "#63.546", 11, 4,
+	"Zn", "Zinc", "#65.38", 12, 4,
+	"Ga", "Gallium", "#69.723", 13, 4,
+	"Ge", "Germanium", "#72.63", 14, 4,
+	"As", "Arsenic", "#74.9216", 15, 4,
+	"Se", "Selenium", "#78.96", 16, 4,
+	"Br", "Bromine", "#79.904", 17, 4,
+	"Kr", "Krypton", "#83.798", 18, 4,
+	"Rb", "Rubidium", "#85.4678", 1, 5,
+	"Sr", "Strontium", "#87.62", 2, 5,
+	"Y", "Yttrium", "88.90585", 3, 5,
+	"Zr", "Zirconium", "#91.224", 4, 5,
+	"Nb", "Niobium", "92.90628", 5, 5,
+	"Mo", "Molybdenum", "#95.96", 6, 5,
+	"Tc", "Technetium", "(98)", 7, 5,
+	"Ru", "Ruthenium", "#101.07", 8, 5,
+	"Rh", "Rhodium", "#102.9055", 9, 5,
+	"Pd", "Palladium", "#106.42", 10, 5,
+	"Ag", "Silver", "#107.8682", 11, 5,
+	"Cd", "Cadmium", "#112.411", 12, 5,
+	"In", "Indium", "#114.818", 13, 5,
+	"Sn", "Tin", "#118.71", 14, 5,
+	"Sb", "Antimony", "#121.76", 15, 5,
+	"Te", "Tellurium", "127.6", 16, 5,
+	"I", "Iodine", "126.90447", 17, 5,
+	"Xe", "Xenon", "#131.293", 18, 5,
+	"Cs", "Caesium", "#132.9054", 1, 6,
+	"Ba", "Barium", "#132.9054", 2, 6,
+	"La", "Lanthanum", "138.90547", 4, 9,
+	"Ce", "Cerium", "#140.116", 5, 9,
+	"Pr", "Praseodymium", "140.90765", 6, 9,
+	"Nd", "Neodymium", "#144.242", 7, 9,
+	"Pm", "Promethium", "(145)", 8, 9,
+	"Sm", "Samarium", "#150.36", 9, 9,
+	"Eu", "Europium", "#151.964", 10, 9,
+	"Gd", "Gadolinium", "#157.25", 11, 9,
+	"Tb", "Terbium", "158.92535", 12, 9,
+	"Dy", "Dysprosium", "162.5", 13, 9,
+	"Ho", "Holmium", "164.93032", 14, 9,
+	"Er", "Erbium", "#167.259", 15, 9,
+	"Tm", "Thulium", "168.93421", 16, 9,
+	"Yb", "Ytterbium", "#173.054", 17, 9,
+	"Lu", "Lutetium", "#174.9668", 18, 9,
+	"Hf", "Hafnium", "#178.49", 4, 6,
+	"Ta", "Tantalum", "180.94788", 5, 6,
+	"W", "Tungsten", "#183.84", 6, 6,
+	"Re", "Rhenium", "#186.207", 7, 6,
+	"Os", "Osmium", "#190.23", 8, 6,
+	"Ir", "Iridium", "#192.217", 9, 6,
+	"Pt", "Platinum", "#195.084", 10, 6,
+	"Au", "Gold", "196.966569", 11, 6,
+	"Hg", "Mercury", "#200.59", 12, 6,
+	"Tl", "Thallium", "#204.3833", 13, 6,
+	"Pb", "Lead", "207.2", 14, 6,
+	"Bi", "Bismuth", "#208.9804", 15, 6,
+	"Po", "Polonium", "(209)", 16, 6,
+	"At", "Astatine", "(210)", 17, 6,
+	"Rn", "Radon", "(222)", 18, 6,
+	"Fr", "Francium", "(223)", 1, 7,
+	"Ra", "Radium", "(226)", 2, 7,
+	"Ac", "Actinium", "(227)", 4, 10,
+	"Th", "Thorium", "232.03806", 5, 10,
+	"Pa", "Protactinium", "#231.0588", 6, 10,
+	"U", "Uranium", "238.02891", 7, 10,
+	"Np", "Neptunium", "(237)", 8, 10,
+	"Pu", "Plutonium", "(244)", 9, 10,
+	"Am", "Americium", "(243)", 10, 10,
+	"Cm", "Curium", "(247)", 11, 10,
+	"Bk", "Berkelium", "(247)", 12, 10,
+	"Cf", "Californium", "(251)", 13, 10,
+	"Es", "Einstenium", "(252)", 14, 10,
+	"Fm", "Fermium", "(257)", 15, 10,
+	"Md", "Mendelevium", "(258)", 16, 10,
+	"No", "Nobelium", "(259)", 17, 10,
+	"Lr", "Lawrencium", "(262)", 18, 10,
+	"Rf", "Rutherfordium", "(267)", 4, 7,
+	"Db", "Dubnium", "(268)", 5, 7,
+	"Sg", "Seaborgium", "(271)", 6, 7,
+	"Bh", "Bohrium", "(272)", 7, 7,
+	"Hs", "Hassium", "(270)", 8, 7,
+	"Mt", "Meitnerium", "(276)", 9, 7,
+	"Ds", "Darmstadium", "(281)", 10, 7,
+	"Rg", "Roentgenium", "(280)", 11, 7,
+	"Cn", "Copernicium", "(285)", 12, 7,
+	"Uut", "Unutrium", "(284)", 13, 7,
+	"Fl", "Flerovium", "(289)", 14, 7,
+	"Uup", "Ununpentium", "(288)", 15, 7,
+	"Lv", "Livermorium", "(293)", 16, 7,
+	"Uus", "Ununseptium", "(294)", 17, 7,
+	"Uuo", "Ununoctium", "(294)", 18, 7
+];
+
+var camera, scene, renderer;
+var controls;
+
+var objects = [];
+var targets = { table: [], sphere: [], helix: [], grid: [] };
+
+init();
+animate();
+
+function init() {
+
+	camera = new THREE.PerspectiveCamera( 40, window.innerWidth / window.innerHeight, 1, 10000 );
+	camera.position.z = 3000;
+
+	scene = new THREE.Scene();
+
+	// table
+
+	for ( var i = 0; i < table.length; i += 5 ) {
+
+		var element = document.createElement( 'div' );
+		element.className = 'element';
+		element.style.backgroundColor = 'rgba(0,127,127,' + ( Math.random() * 0.5 + 0.25 ) + ')';
+
+		var number = document.createElement( 'div' );
+		number.className = 'number';
+		number.textContent = (i/5) + 1;
+		element.appendChild( number );
+
+		var symbol = document.createElement( 'div' );
+		symbol.className = 'symbol';
+		symbol.textContent = table[ i ];
+		element.appendChild( symbol );
+
+		var details = document.createElement( 'div' );
+		details.className = 'details';
+		details.innerHTML = table[ i + 1 ] + '<br>' + table[ i + 2 ];
+		element.appendChild( details );
+
+		var object = new THREE.CSS3DObject( element );
+		object.position.x = Math.random() * 4000 - 2000;
+		object.position.y = Math.random() * 4000 - 2000;
+		object.position.z = Math.random() * 4000 - 2000;
+		scene.add( object );
+
+		objects.push( object );
+
+		//
+
+		var object = new THREE.Object3D();
+		object.position.x = ( table[ i + 3 ] * 140 ) - 1330;
+		object.position.y = - ( table[ i + 4 ] * 180 ) + 990;
+
+		targets.table.push( object );
+
+	}
+
+	// sphere
+
+	var vector = new THREE.Vector3();
+
+	for ( var i = 0, l = objects.length; i < l; i ++ ) {
+
+		var phi = Math.acos( -1 + ( 2 * i ) / l );
+		var theta = Math.sqrt( l * Math.PI ) * phi;
+
+		var object = new THREE.Object3D();
+
+		object.position.x = 800 * Math.cos( theta ) * Math.sin( phi );
+		object.position.y = 800 * Math.sin( theta ) * Math.sin( phi );
+		object.position.z = 800 * Math.cos( phi );
+
+		vector.copy( object.position ).multiplyScalar( 2 );
+
+		object.lookAt( vector );
+
+		targets.sphere.push( object );
+
+	}
+
+	// helix
+
+	var vector = new THREE.Vector3();
+
+	for ( var i = 0, l = objects.length; i < l; i ++ ) {
+
+		var phi = i * 0.175 + Math.PI;
+
+		var object = new THREE.Object3D();
+
+		object.position.x = 900 * Math.sin( phi );
+		object.position.y = - ( i * 8 ) + 450;
+		object.position.z = 900 * Math.cos( phi );
+
+		vector.x = object.position.x * 2;
+		vector.y = object.position.y;
+		vector.z = object.position.z * 2;
+
+		object.lookAt( vector );
+
+		targets.helix.push( object );
+
+	}
+
+	// grid
+
+	for ( var i = 0; i < objects.length; i ++ ) {
+
+		var object = new THREE.Object3D();
+
+		object.position.x = ( ( i % 5 ) * 400 ) - 800;
+		object.position.y = ( - ( Math.floor( i / 5 ) % 5 ) * 400 ) + 800;
+		object.position.z = ( Math.floor( i / 25 ) ) * 1000 - 2000;
+
+		targets.grid.push( object );
+
+	}
+
+	//
+
+	renderer = new THREE.CSS3DRenderer();
+	renderer.setSize( window.innerWidth, window.innerHeight );
+	renderer.domElement.style.position = 'absolute';
+	document.getElementById( 'container' ).appendChild( renderer.domElement );
+
+	//
+
+	controls = new THREE.TrackballControls( camera, renderer.domElement );
+	controls.rotateSpeed = 0.5;
+	controls.minDistance = 500;
+	controls.maxDistance = 6000;
+	controls.addEventListener( 'change', render );
+
+	var button = document.getElementById( 'table' );
+	button.addEventListener( 'click', function ( event ) {
+
+		transform( targets.table, 2000 );
+
+	}, false );
+
+	var button = document.getElementById( 'sphere' );
+	button.addEventListener( 'click', function ( event ) {
+
+		transform( targets.sphere, 2000 );
+
+	}, false );
+
+	var button = document.getElementById( 'helix' );
+	button.addEventListener( 'click', function ( event ) {
+
+		transform( targets.helix, 2000 );
+
+	}, false );
+
+	var button = document.getElementById( 'grid' );
+	button.addEventListener( 'click', function ( event ) {
+
+		transform( targets.grid, 2000 );
+
+	}, false );
+
+	transform( targets.table, 5000 );
+
+	//
+
+	window.addEventListener( 'resize', onWindowResize, false );
+
+}
+
+function transform( targets, duration ) {
+
+	TWEEN.removeAll();
+
+	for ( var i = 0; i < objects.length; i ++ ) {
+
+		var object = objects[ i ];
+		var target = targets[ i ];
+
+		new TWEEN.Tween( object.position )
+			.to( { x: target.position.x, y: target.position.y, z: target.position.z }, Math.random() * duration + duration )
+			.easing( TWEEN.Easing.Exponential.InOut )
+			.start();
+
+		new TWEEN.Tween( object.rotation )
+			.to( { x: target.rotation.x, y: target.rotation.y, z: target.rotation.z }, Math.random() * duration + duration )
+			.easing( TWEEN.Easing.Exponential.InOut )
+			.start();
+
+	}
+
+	new TWEEN.Tween( this )
+		.to( {}, duration * 2 )
+		.onUpdate( render )
+		.start();
+
+}
+
+function onWindowResize() {
+
+	camera.aspect = window.innerWidth / window.innerHeight;
+	camera.updateProjectionMatrix();
+
+	renderer.setSize( window.innerWidth, window.innerHeight );
+
+	render();
+
+}
+
+function animate() {
+
+	requestAnimationFrame( animate );
+
+	TWEEN.update();
+
+	controls.update();
+
+}
+
+function render() {
+
+	renderer.render( scene, camera );
+
+}
+
+</script>
+
+
+</body></html>
