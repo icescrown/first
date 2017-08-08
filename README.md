@@ -1,2 +1,3 @@
-# first
-my first repository just for test
+# 炫酷的html5 3D元素周期表
+兼容性有问题，这里只是保存
+
